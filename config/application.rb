@@ -23,5 +23,8 @@ module RedisStoreSamesite
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Comment to revert to cookie store
+    config.session_store :redis_store, servers: %w(redis://localhost:6379/0/session)
   end
 end
