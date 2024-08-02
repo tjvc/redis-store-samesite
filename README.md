@@ -1,24 +1,8 @@
-# README
+# Reproduction steps
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. `bin/rails s`
+2. Hit http://localhost:3000
+3. See that the session cookie has `SameSite=None`
+4. Comment the session store configuration in `config/application.rb` to revert to the default cookie store
+5. Restart the app and refresh
+6. See that the session cookie has `SameSite=Lax`
